@@ -1,0 +1,14 @@
+{
+    "name": "noisim/thumbnail",
+    "description": "This is a package to optimize the images size of your web app. Can be used to autogenerate thumbnail for any image of your project.",
+    "authors": [
+        {
+            "name": "Alban Afmeti",
+            "email": "albanafmeti@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "intervention/image": "^2.4"
+    }
+}
