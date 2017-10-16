@@ -54,8 +54,7 @@ return [
     | {width} and {height} vars will be filled dynamically
     */
 
-    'placeholder' => 'http://via.placeholder.com/{width}x{height}',
-
+    'placeholder' => 'http://via.placeholder.com/{width}x{height}/{bgColor}',
 
     /*
     |--------------------------------------------------------------------------
