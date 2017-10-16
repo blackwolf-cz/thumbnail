@@ -1,6 +1,6 @@
 {
   "name": "noisim/thumbnail",
-  "description": "A package to optimize the size of images on your web app.",
+  "description": "A package to optimize the dimensions of images in your web app.",
   "license": "MIT",
   "authors": [
     {
