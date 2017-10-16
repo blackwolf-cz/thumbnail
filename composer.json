@@ -1,6 +1,7 @@
 {
   "name": "noisim/thumbnail",
-  "description": "This is a package to optimize the images size of your web app. Can be used to autogenerate thumbnail for any image of your project.",
+  "description": "A package to optimize the size of images on your web app.",
+  "license": "MIT",
   "authors": [
     {
       "name": "Alban Afmeti",
