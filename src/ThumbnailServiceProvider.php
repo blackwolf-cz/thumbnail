@@ -4,6 +4,7 @@ namespace Noisim\Thumbnail;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Noisim\Thumbnail\Commands\ClearThumbnails;
 
 class ThumbnailServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,12 @@ class ThumbnailServiceProvider extends ServiceProvider
             $bgColor = isset($vars[4]) ? $vars[4] : "null";
             return "<?php echo '<img class=\"nth-thumbnail\" src=\"' . thumbnail('$path', $width, $height, '$type', '$bgColor') . '\" alt=\"$path\"/>' ?>";
         });
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ClearThumbnails::class,
+            ]);
+        }
     }
 
     /**

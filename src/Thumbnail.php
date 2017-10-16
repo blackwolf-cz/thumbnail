@@ -3,6 +3,7 @@
 namespace Noisim\Thumbnail;
 
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\File;
 
 class Thumbnail
 {
@@ -29,12 +30,12 @@ class Thumbnail
         $this->createThumbsDir();
 
         /* If thumbnail already exist return it */
-        if (file_exists($this->thumbsDir . "/" . "{$width}x{$height}/" . $path)) {
+        if (File::exists($this->thumbsDir . "/" . "{$width}x{$height}/" . $path)) {
             return url($this->thumbsPath . "/" . "{$width}x{$height}/" . $path);
         }
 
         /* If original image doesn't exists return a default error image */
-        if (!file_exists($this->baseDir . "/" . $path)) {
+        if (!File::exists($this->baseDir . "/" . $path)) {
             return $this->noImage($width, $height, $type, $bgColor);
         }
 
@@ -77,8 +78,8 @@ class Thumbnail
             $dir_path = (dirname($path) == '.') ? "" : "/" . dirname($path);
 
             /* Create the directory if it doesn't exist */
-            if (!file_exists($this->thumbsDir . "/{$width}x{$height}" . $dir_path)) {
-                mkdir($this->thumbsDir . "/{$width}x{$height}" . $dir_path, 0775, true);
+            if (!File::exists($this->thumbsDir . "/{$width}x{$height}" . $dir_path)) {
+                File::makeDirectory($this->thumbsDir . "/{$width}x{$height}" . $dir_path, 0775, true);
             }
 
             /* Save the thumbnail */
