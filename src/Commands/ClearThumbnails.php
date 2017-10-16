@@ -38,11 +38,11 @@ class ClearThumbnails extends Command
      */
     public function handle()
     {
-        $this->basePath = rtrim(config('thumb.base_path', '/'), '/');
-        $this->baseDir = public_path($this->basePath);
-        $this->thumbsDir = rtrim($this->baseDir, "/") . "/" . trim(config('thumb.thumbs_dir_name', 'thumbs'), '/');
+        $basePath = rtrim(config('thumb.base_path', '/'), '/');
+        $baseDir = public_path($basePath);
+        $thumbsDir = rtrim($baseDir, "/") . "/" . trim(config('thumb.thumbs_dir_name', 'thumbs'), '/');
 
-        $success = File::cleanDirectory($this->thumbsDir, true);
+        $success = File::cleanDirectory($thumbsDir, true);
         if ($success) {
             $this->info('Thumbnails has been cleared successfully.');
         } else {
