@@ -18,5 +18,5 @@
       "Noisim\\Thumbnail\\": "src"
     },
     "files": ["src/helpers.php"]
-  },
+  }
 }
