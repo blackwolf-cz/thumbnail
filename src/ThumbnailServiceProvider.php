@@ -19,8 +19,6 @@ class ThumbnailServiceProvider extends ServiceProvider
             __DIR__ . '/config/thumb.php' => config_path('thumb.php'),
         ], 'config');
 
-        require "helpers.php";
-
         Blade::directive('thumbnail', function ($expression) {
             $vars = explode(',', str_replace(['(', ')', ' '], '', $expression));
             $path = isset($vars[0]) ? $vars[0] : "null";
