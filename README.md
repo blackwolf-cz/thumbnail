@@ -1,1 +1,1 @@
-> noisim/thumbnail
+> composer require noisim/thumbnail
