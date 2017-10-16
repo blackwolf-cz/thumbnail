@@ -44,7 +44,7 @@ class ClearThumbnails extends Command
 
         $success = File::cleanDirectory($thumbsDir, true);
         if ($success) {
-            $this->info('Thumbnails has been cleared successfully.');
+            $this->info('Thumbnails have been cleared successfully.');
         } else {
             $this->error('Something went wrong!');
         }
