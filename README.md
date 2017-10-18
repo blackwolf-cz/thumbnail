@@ -8,11 +8,9 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "noisim/thumbnail": "1.0.*"
+        "noisim/thumbnail": "dev-master"
     }
 }
 ```
 
 and run composer to update the dependencies `composer update`.
-
-Or simply you can run `composer require noisim/thumbnail`.
