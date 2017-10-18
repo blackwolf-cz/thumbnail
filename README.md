@@ -8,7 +8,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "noisim/thumbnail": "0.1.0"
+        "noisim/thumbnail": "1.0.*"
     }
 }
 ```
