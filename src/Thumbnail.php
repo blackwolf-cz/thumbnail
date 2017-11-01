@@ -17,7 +17,7 @@ class Thumbnail
         Image::configure(array('driver' => config("thumb.driver", "gd")));
     }
 
-    public function thumbnail($path, $width = null, $height = null, $type = null, $bgColor = null)
+    public function thumbnail($path, $width = null, $height = null, $type = 'crop', $bgColor = null)
     {
         $this->basePath = rtrim(config('thumb.base_path', '/'), '/');
         $this->baseDir = public_path($this->basePath);
