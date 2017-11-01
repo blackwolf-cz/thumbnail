@@ -3,7 +3,7 @@
 /* Helpers Functions */
 
 if (!function_exists("thumbnail")) {
-    function thumbnail($path, $width = null, $height = null, $type = "fit", $bgColor = null)
+    function thumbnail($path, $width = null, $height = null, $type = "crop", $bgColor = null)
     {
         return (new \Noisim\Thumbnail\Thumbnail())->thumbnail($path, $width, $height, $type, $bgColor);
     }
