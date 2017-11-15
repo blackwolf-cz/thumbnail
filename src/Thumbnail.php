@@ -56,6 +56,12 @@ class Thumbnail
                     $image->resize($width, $height);
                     break;
                 }
+                case "fit": {
+                    $image->fit($width, $height, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                    break;
+                }
                 case "crop": {
                     $image->fit($width, $height, function ($constraint) {
                         $constraint->upsize();
