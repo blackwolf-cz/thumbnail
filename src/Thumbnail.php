@@ -29,7 +29,7 @@ class Thumbnail
 
         $this->createThumbsDir();
 
-        /* If thumbnail already exist return it */
+        /* If thumbnail already exists return it */
         if (File::exists($this->thumbsDir . "/" . "{$width}x{$height}/" . $path)) {
             return url($this->thumbsPath . "/" . "{$width}x{$height}/" . $path);
         }
