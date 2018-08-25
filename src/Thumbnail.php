@@ -64,7 +64,7 @@ class Thumbnail
                 }
                 case "crop": {
                     $image->fit($width, $height, function ($constraint) {
-                        $constraint->upsize();
+                        // $constraint->upsize();
                     });
                     break;
                 }
