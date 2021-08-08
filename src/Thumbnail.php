@@ -2,6 +2,7 @@
 
 namespace Noisim\Thumbnail;
 
+use Intervention\Image\Exception\NotReadableException;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\File;
 
@@ -49,7 +50,11 @@ class Thumbnail
                 return url($this->basePath . "/" . $path);
             }
 
-            $image = Image::make($this->baseDir . "/" . $path);
+            try {
+                $image = Image::make($this->baseDir . "/" . $path);
+            } catch (NotReadableException $e) {
+                return $this->noImage($width, $height, $type, $bgColor);
+            }
 
             switch ($type) {
                 case "resize": {
